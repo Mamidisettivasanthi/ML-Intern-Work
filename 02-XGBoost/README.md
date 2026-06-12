@@ -64,7 +64,7 @@ This closed-form formula gives the best output score for each leaf — no search
 
 ## 3. How It Works — Step by Step
 
-![XGBoost Pipeline](xgboost_pipeline.png)
+![XGBoost Pipeline](pipeline.png)
 
 **Step 1: Initialize with a base prediction.**
 Start all predictions with a constant — the mean of the target for regression, or log-odds for classification. This is the "rough first draft" before any tree is built.
@@ -97,7 +97,7 @@ Update: $\hat{y}_i \leftarrow \hat{y}_i + \eta \cdot f_t(x_i)$. The learning rat
 **Step 7: Repeat Steps 2–6 for $K$ rounds.**
 Each round targets the residuals of the current ensemble. Over rounds, errors shrink, and the predictions converge.
 
-![Split Gain vs Regularization](xgboost_gain_vs_regularization.png)
+![Split Gain vs Regularization](gain_vs_regularization.png)
 
 **Step 8: Final prediction.**
 Sum all tree outputs scaled by $\eta$, then apply the output transform (e.g., sigmoid for binary classification).
