@@ -86,7 +86,7 @@ The split with the highest positive gain is chosen. If no split achieves gain $>
 **Step 4: Assign optimal leaf weights $w_j^*$.**
 Use the closed-form formula above to compute the best output for each leaf — analytically exact, no gradient descent needed at this step.
 
-![Residual Reduction Across Rounds](xgboost_residual_evolution.png)
+![Residual Reduction Across Rounds](residual_evolution.png)
 
 **Step 5: Prune the tree with $\gamma$.**
 Any branch whose gain falls below $\gamma$ is removed after the tree is built. This post-pruning strategy prevents splits that technically improve the training set but add complexity without meaningful gain.
